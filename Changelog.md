@@ -26,10 +26,18 @@ AST Changes:
  * AST: add the ``internalFunctionID`` field to the AST nodes of functions that may be called via the internal dispatch. These IDs are always generated, but they are only used in via-IR code generation.
 
 
+Important Bugfixes:
+ * ABI: Include events in the ABI that are emitted by a contract but defined outside of it.
+
+
+AST Changes:
+ * Add field ``emittedEvents`` to ``ContractDefinition`` which contains the AST IDs of all inherited and emitted events.
+
+
 ### 0.8.19 (2023-02-22)
 
 Language Features:
-* Allow defining custom operators for user-defined value types via ``using {f as +} for T global`` syntax.
+ * Allow defining custom operators for user-defined value types via ``using {f as +} for T global`` syntax.
 
 
 Compiler Features:
