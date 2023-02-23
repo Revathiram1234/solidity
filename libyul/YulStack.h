@@ -66,7 +66,6 @@ class YulStack: public langutil::CharStreamProvider
 {
 public:
 	enum class Language { Yul, Assembly, StrictAssembly };
-	enum class Machine { EVM };
 
 	YulStack():
 		YulStack(
@@ -105,7 +104,7 @@ public:
 	void optimize();
 
 	/// Run the assembly step (should only be called after parseAndAnalyze).
-	MachineAssemblyObject assemble(Machine _machine) const;
+	MachineAssemblyObject assemble() const;
 
 	/// Run the assembly step (should only be called after parseAndAnalyze).
 	/// In addition to the value returned by @a assemble, returns
