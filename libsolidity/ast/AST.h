@@ -1245,6 +1245,12 @@ public:
 	{
 	}
 
+	struct CompareBySignature
+	{
+		std::string const eventSignature(EventDefinition const* _event) const;
+		bool operator()(EventDefinition const* _lhs, EventDefinition const* _rhs) const;
+	};
+
 	void accept(ASTVisitor& _visitor) override;
 	void accept(ASTConstVisitor& _visitor) const override;
 

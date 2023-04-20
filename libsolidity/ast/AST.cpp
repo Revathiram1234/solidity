@@ -591,6 +591,22 @@ FunctionTypePointer EventDefinition::functionType(bool _internal) const
 		return nullptr;
 }
 
+bool EventDefinition::CompareBySignature::operator()(
+	EventDefinition const* _lhs,
+	EventDefinition const* _rhs
+) const
+{
+	return eventSignature(_lhs) < eventSignature(_rhs);
+}
+
+string const EventDefinition::CompareBySignature::eventSignature(EventDefinition const* _event) const
+{
+	auto const& function = _event->functionType(true);
+	solAssert(function, "");
+	return function->externalSignature();
+}
+
+
 EventDefinitionAnnotation& EventDefinition::annotation() const
 {
 	return initAnnotation<EventDefinitionAnnotation>();
