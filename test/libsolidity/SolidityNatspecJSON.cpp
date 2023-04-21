@@ -475,11 +475,9 @@ BOOST_AUTO_TEST_CASE(event)
 		"events":
 		{
 			"Transfer(address,address,uint256)":
-			[
-				{
-					"notice": "This event is emitted when a transfer occurs."
-				}
-			]
+			{
+				"notice": "This event is emitted when a transfer occurs."
+			}
 		},
 		"methods": {}
 	}
@@ -492,10 +490,10 @@ BOOST_AUTO_TEST_CASE(emit_same_signature_event_library_contract)
 	char const* sourceCode = R"(
 		library L {
 		    /// @notice This event is defined in Library L
-			/// @dev This should not appear in Contract C dev doc
+		    /// @dev This should not appear in Contract C dev doc
 		    event SameSignatureEvent(uint16);
 		    /// @notice This event is defined in Library L
-			/// @dev This should not appear in Contract C dev doc
+		    /// @dev This should not appear in Contract C dev doc
 		    event LibraryEvent(uint32);
 		}
 		contract C {
@@ -834,11 +832,9 @@ BOOST_AUTO_TEST_CASE(event_inheritance)
 		"events":
 		{
 			"Transfer(address,address,uint256)":
-			[
-				{
-					"notice": "This event is emitted when a transfer occurs."
-				}
-			]
+			{
+				"notice": "This event is emitted when a transfer occurs."
+			}
 		},
 		"methods": {}
 	}

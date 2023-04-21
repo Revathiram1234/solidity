@@ -79,10 +79,10 @@ Json::Value Natspec::userDocumentation(ContractDefinition const& _contractDef)
 		}
 
 	auto events =
-	util::convertContainer<set<EventDefinition const*, EventDefinition::CompareBySignature>>(
-		_contractDef.definedInterfaceEvents() +
-		_contractDef.usedInterfaceEvents()
-	);
+		util::convertContainer<set<EventDefinition const*, EventDefinition::CompareBySignature>>(
+			_contractDef.definedInterfaceEvents() +
+			_contractDef.usedInterfaceEvents()
+		);
 
 	for (auto const& event: events)
 	{

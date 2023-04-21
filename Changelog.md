@@ -31,7 +31,7 @@ Important Bugfixes:
 
 
 AST Changes:
- * Add field ``emittedEvents`` to ``ContractDefinition`` which contains the AST IDs of all inherited and emitted events.
+ * Add field ``emittedEvents`` to ``ContractDefinition`` which contains the AST IDs of all events emitted by the contract as well as all events defined and inherited by the contract.
 
 
 ### 0.8.19 (2023-02-22)

@@ -144,6 +144,7 @@
       "canonicalName": "L",
       "contractDependencies": [],
       "contractKind": "library",
+      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 53,
       "linearizedBaseContracts":
@@ -576,6 +577,7 @@
       "canonicalName": "C",
       "contractDependencies": [],
       "contractKind": "contract",
+      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 128,
       "linearizedBaseContracts":
@@ -1401,6 +1403,7 @@
       "canonicalName": "D",
       "contractDependencies": [],
       "contractKind": "contract",
+      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 141,
       "linearizedBaseContracts":
