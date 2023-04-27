@@ -9,7 +9,6 @@
       "baseContracts": [],
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "id": 5,
       "name": "C",
       "nameLocation": "9:1:1",
@@ -48,7 +47,8 @@
         }
       ],
       "src": "0:32:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "0:33:1"

@@ -10,7 +10,6 @@
       "baseContracts": [],
       "contractDependencies": [],
       "contractKind": "library",
-      "emittedEvents": [],
       "id": 10,
       "name": "L",
       "nameLocation": "44:1:1",
@@ -95,14 +94,14 @@
         }
       ],
       "src": "36:68:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     },
     {
       "abstract": false,
       "baseContracts": [],
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "id": 25,
       "name": "C",
       "nameLocation": "114:1:1",
@@ -221,7 +220,8 @@
         }
       ],
       "src": "105:74:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "36:144:1"

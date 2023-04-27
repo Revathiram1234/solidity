@@ -39,14 +39,14 @@
       "baseContracts": [],
       "contractDependencies": [],
       "contractKind": "library",
-      "emittedEvents": [],
       "id": 4,
       "name": "L",
       "nameLocation": "28:1:1",
       "nodeType": "ContractDefinition",
       "nodes": [],
       "src": "20:12:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     },
     {
       "body":
@@ -110,7 +110,6 @@
       "baseContracts": [],
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "id": 13,
       "name": "C",
       "nameLocation": "62:1:1",
@@ -136,7 +135,8 @@
         }
       ],
       "src": "53:29:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "0:83:1"

@@ -25,7 +25,6 @@
         "src": "0:27:1",
         "text": "This contract is empty"
       },
-      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 2,
       "linearizedBaseContracts":
@@ -38,7 +37,8 @@
       "nodes": [],
       "scope": 3,
       "src": "28:13:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "28:14:1"
@@ -69,7 +69,6 @@
         "src": "0:61:2",
         "text": "This contract is empty\nand has a line-breaking comment."
       },
-      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 5,
       "linearizedBaseContracts":
@@ -82,7 +81,8 @@
       "nodes": [],
       "scope": 6,
       "src": "62:13:2",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "62:14:2"
@@ -106,10 +106,6 @@
       "canonicalName": "C",
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents":
-      [
-        12
-      ],
       "fullyImplemented": true,
       "id": 23,
       "linearizedBaseContracts":
@@ -265,7 +261,11 @@
       ],
       "scope": 24,
       "src": "0:213:3",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents":
+      [
+        12
+      ]
     }
   ],
   "src": "0:214:3"

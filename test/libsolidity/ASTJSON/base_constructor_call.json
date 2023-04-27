@@ -21,7 +21,6 @@
       "canonicalName": "A",
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 7,
       "linearizedBaseContracts":
@@ -103,7 +102,8 @@
       ],
       "scope": 18,
       "src": "0:35:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     },
     {
       "abstract": false,
@@ -130,7 +130,6 @@
       "canonicalName": "C",
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 17,
       "linearizedBaseContracts":
@@ -221,7 +220,8 @@
       ],
       "scope": 18,
       "src": "36:41:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "0:78:1"

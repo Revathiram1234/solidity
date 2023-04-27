@@ -25,7 +25,6 @@
       "canonicalName": "A",
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 5,
       "linearizedBaseContracts":
@@ -76,7 +75,8 @@
       ],
       "scope": 30,
       "src": "0:48:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     },
     {
       "abstract": true,
@@ -103,7 +103,6 @@
       "canonicalName": "B",
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "fullyImplemented": false,
       "id": 16,
       "linearizedBaseContracts":
@@ -195,7 +194,8 @@
       ],
       "scope": 30,
       "src": "49:103:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     },
     {
       "abstract": false,
@@ -222,7 +222,6 @@
       "canonicalName": "C",
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 29,
       "linearizedBaseContracts":
@@ -333,7 +332,8 @@
       ],
       "scope": 30,
       "src": "153:91:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "0:245:1"

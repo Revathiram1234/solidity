@@ -36,7 +36,6 @@
       "baseContracts": [],
       "contractDependencies": [],
       "contractKind": "interface",
-      "emittedEvents": [],
       "id": 29,
       "name": "I",
       "nameLocation": "31:1:1",
@@ -290,7 +289,8 @@
         }
       ],
       "src": "21:154:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "0:176:1"

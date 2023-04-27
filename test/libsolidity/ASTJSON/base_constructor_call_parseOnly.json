@@ -9,7 +9,6 @@
       "baseContracts": [],
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "id": 7,
       "name": "A",
       "nameLocation": "9:1:1",
@@ -74,7 +73,8 @@
         }
       ],
       "src": "0:35:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     },
     {
       "abstract": false,
@@ -99,7 +99,6 @@
       ],
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "id": 17,
       "name": "C",
       "nameLocation": "45:1:1",
@@ -171,7 +170,8 @@
         }
       ],
       "src": "36:41:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "0:78:1"

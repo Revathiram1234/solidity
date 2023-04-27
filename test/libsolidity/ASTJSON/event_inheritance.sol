@@ -7,3 +7,5 @@ contract C is B {
 contract D is C {
     event ED();
 }
+
+// ----

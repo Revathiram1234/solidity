@@ -17,7 +17,6 @@
       "canonicalName": "C",
       "contractDependencies": [],
       "contractKind": "contract",
-      "emittedEvents": [],
       "fullyImplemented": true,
       "id": 5,
       "linearizedBaseContracts":
@@ -67,7 +66,8 @@
       ],
       "scope": 6,
       "src": "0:50:1",
-      "usedErrors": []
+      "usedErrors": [],
+      "usedEvents": []
     }
   ],
   "src": "0:51:1"
