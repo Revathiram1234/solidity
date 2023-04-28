@@ -530,6 +530,10 @@ public:
 	/// and all errors referenced during execution.
 	/// @param _requireCallGraph if false, do not fail if the call graph has not been computed yet.
 	std::vector<ErrorDefinition const*> interfaceErrors(bool _requireCallGraph = true) const;
+	/// @return same as interfaceEvents, but allowing only unique signatures
+	/// In case of conflict between a library event and a contract one, selects the later
+	/// In case of conflict between two library events, selects the one that is defined first
+	std::vector<EventDefinition const*> natspecInterfaceEvents() const;
 	bool isInterface() const { return m_contractKind == ContractKind::Interface; }
 	bool isLibrary() const { return m_contractKind == ContractKind::Library; }
 
@@ -1244,12 +1248,6 @@ public:
 		m_anonymous(_anonymous)
 	{
 	}
-
-	struct CompareBySignature
-	{
-		std::string const eventSignature(EventDefinition const* _event) const;
-		bool operator()(EventDefinition const* _lhs, EventDefinition const* _rhs) const;
-	};
 
 	void accept(ASTVisitor& _visitor) override;
 	void accept(ASTConstVisitor& _visitor) const override;

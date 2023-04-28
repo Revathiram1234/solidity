@@ -78,13 +78,7 @@ Json::Value Natspec::userDocumentation(ContractDefinition const& _contractDef)
 				doc["methods"][it.second->externalSignature()]["notice"] = value;
 		}
 
-	auto events =
-		util::convertContainer<set<EventDefinition const*, EventDefinition::CompareBySignature>>(
-			_contractDef.definedInterfaceEvents() +
-			_contractDef.usedInterfaceEvents()
-		);
-
-	for (auto const& event: events)
+	for (auto const& event: _contractDef.natspecInterfaceEvents())
 	{
 		string value = extractDoc(event->annotation().docTags, "notice");
 		if (!value.empty())

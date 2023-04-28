@@ -220,9 +220,9 @@ vector<EventDefinition const*> const& ContractDefinition::definedInterfaceEvents
 				/// NOTE: this requires the "internal" version of an Event,
 				///       though here internal strictly refers to visibility,
 				///       and not to function encoding (jump vs. call)
-				auto const& function = e->functionType(true);
-				solAssert(function, "");
-				string eventSignature = function->externalSignature();
+				FunctionType const* functionType = e->functionType(true);
+				solAssert(functionType, "");
+				string eventSignature = functionType->externalSignature();
 				if (eventsSeen.count(eventSignature) == 0)
 				{
 					eventsSeen.insert(eventSignature);
@@ -256,6 +256,26 @@ vector<EventDefinition const*> ContractDefinition::interfaceEvents(bool _require
 	// We could filter out all events that do not have an external interface
 	// if _requireCallGraph is false.
 	return util::convertContainer<vector<EventDefinition const*>>(std::move(result));
+}
+
+vector<EventDefinition const*> ContractDefinition::natspecInterfaceEvents() const
+{
+	auto eventSignature =
+		[](EventDefinition const* _event) -> string {
+			FunctionType const* functionType = _event->functionType(true);
+			solAssert(functionType, "");
+			return functionType->externalSignature();
+	};
+	auto compareBySignature =
+		[&eventSignature](EventDefinition const* _lhs, EventDefinition const* _rhs) -> bool {
+			return eventSignature(_lhs) < eventSignature(_rhs);
+	};
+
+	set<EventDefinition const*, decltype(compareBySignature)> events{compareBySignature};
+	events += definedInterfaceEvents();
+	events += usedInterfaceEvents();
+
+	return util::convertContainer<vector<EventDefinition const*>>(std::move(events));
 }
 
 vector<ErrorDefinition const*> ContractDefinition::interfaceErrors(bool _requireCallGraph) const
@@ -590,22 +610,6 @@ FunctionTypePointer EventDefinition::functionType(bool _internal) const
 	else
 		return nullptr;
 }
-
-bool EventDefinition::CompareBySignature::operator()(
-	EventDefinition const* _lhs,
-	EventDefinition const* _rhs
-) const
-{
-	return eventSignature(_lhs) < eventSignature(_rhs);
-}
-
-string const EventDefinition::CompareBySignature::eventSignature(EventDefinition const* _event) const
-{
-	auto const& function = _event->functionType(true);
-	solAssert(function, "");
-	return function->externalSignature();
-}
-
 
 EventDefinitionAnnotation& EventDefinition::annotation() const
 {
