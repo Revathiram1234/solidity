@@ -493,7 +493,7 @@ BOOST_AUTO_TEST_CASE(emit_same_signature_event_library_contract)
 		    /// @dev This should not appear in Contract C dev doc
 		    event SameSignatureEvent(uint16);
 		    /// @notice This event is defined in Library L
-		    /// @dev This should not appear in Contract C dev doc
+		    /// @dev This should appear in Contract C dev doc
 		    event LibraryEvent(uint32);
 		}
 		contract C {
@@ -520,6 +520,10 @@ BOOST_AUTO_TEST_CASE(emit_same_signature_event_library_contract)
 	        {
 	            "details": "This should appear in contract C dev doc"
 	        },
+			"LibraryEvent(uint32)":
+			{
+				"details": "This should appear in Contract C dev doc"
+			},
 	        "SameSignatureEvent(uint16)":
 	        {
 	            "details": "This should appear in Contract C dev doc"
@@ -562,7 +566,7 @@ BOOST_AUTO_TEST_CASE(emit_same_signature_event_different_libraries)
 	char const* sourceCode = R"(
 		library L1 {
 		    /// @notice This event is defined in Library L1
-		    /// @dev This should not appear in Contract C dev doc
+		    /// @dev This should appear in Contract C dev doc
 		    event SameSignatureEvent(uint16);
 		}
 		library L2 {
@@ -580,6 +584,13 @@ BOOST_AUTO_TEST_CASE(emit_same_signature_event_different_libraries)
 
 	char const* devDoc = R"ABCDEF(
 	{
+		"events":
+		{
+			"SameSignatureEvent(uint16)":
+			{
+				"details": "This should appear in Contract C dev doc"
+			}
+		},
 		"kind": "dev",
 		"methods": {},
 		"version": 1
@@ -666,7 +677,7 @@ BOOST_AUTO_TEST_CASE(emit_same_signature_event_library_contract_missing_natspec)
 		    /// @dev This should not appear in contract C devdoc
 		    event SameSignatureEvent(uint16);
 		    /// @notice This event is defined in library L
-			/// @dev This should not appear in contract C devdoc
+			/// @dev This should appear in contract C devdoc
 		    event LibraryEvent(uint32);
 		}
 		contract C {
@@ -684,9 +695,16 @@ BOOST_AUTO_TEST_CASE(emit_same_signature_event_library_contract_missing_natspec)
 
 	char const* devDoc = R"ABCDEF(
 	{
-		"kind": "dev",
-		"methods": {},
-		"version": 1
+	    "events":
+	    {
+	        "LibraryEvent(uint32)":
+	        {
+	            "details": "This should appear in contract C devdoc"
+	        }
+	    },
+	    "kind": "dev",
+	    "methods": {},
+	    "version": 1
 	}
 	)ABCDEF";
 	checkNatspec(sourceCode, "C", devDoc, false);
